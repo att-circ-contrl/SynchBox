@@ -1,0 +1,160 @@
+# Attention Circuits Control Laboratory - I/O SynchBox project
+# Makefile for building with the NeurAVR libraries.
+# Written by Christopher Thomas.
+# Copyright (c) 2021 by Vanderbilt University. This work is released under
+# the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+#
+# Configuration.
+
+# Base filename.
+PROJNAME=synchbox
+
+# Source files.
+
+HDRS=	\
+	$(PROJNAME)_adc.h	\
+	$(PROJNAME)_config.h	\
+	$(PROJNAME)_events.h	\
+	$(PROJNAME)_host.h	\
+	$(PROJNAME)_includes.h	\
+	$(PROJNAME)_io.h	\
+	$(PROJNAME)_light.h	\
+	$(PROJNAME)_main.h	\
+	$(PROJNAME)_parse.h	\
+	$(PROJNAME)_timer.h
+
+SRCS=	\
+	$(PROJNAME)_adc.cpp		\
+	$(PROJNAME)_events.cpp		\
+	$(PROJNAME)_host.cpp		\
+	$(PROJNAME)_io.cpp		\
+	$(PROJNAME)_light.cpp		\
+	$(PROJNAME)_main.cpp		\
+	$(PROJNAME)_parse.cpp		\
+	$(PROJNAME)_timer_arduino.cpp	\
+	$(PROJNAME)_timer_neuravr.cpp
+
+# Target name.
+BIN=$(PROJNAME)
+
+
+# Compiler flags.
+
+# NOTE - You'll have to override NEURAVRPATH from the command-line to point
+# to your own path.
+NEURAVRPATH=neuravr
+
+CFLAGS=\
+	-Os -fno-exceptions				\
+	-I$(NEURAVRPATH)/include -L$(NEURAVRPATH)/lib	\
+	-D__AVR_ATmega2560__ -mmcu=atmega2560		\
+	-DUSE_NEURAVR
+
+LFLAGS=-lneur-m2560
+
+
+#
+# Targets.
+
+default: helpscreen
+
+helpscreen:
+	@echo ""
+	@echo "Typical targets:   clean  hex  burn"
+	@echo ""
+	@echo ""
+	@echo "Full target list:"
+	@echo ""
+	@echo "   clean -- Removes .hex, .elf, and .asm files."
+	@echo "     hex -- Generates .hex file, and copies to ../hexfiles."
+	@echo "     elf -- Generates .elf object code."
+	@echo "     asm -- Generates disassembly of object code."
+	@echo ""
+	@echo "    burn -- Calls avrdude to write to /dev/ttyACM0."
+	@echo "burnftdi -- Burns to /dev/ttyUSB0 with flow-control disabled."
+	@echo " burnisp -- Calls avrdude to write via a usb AVR ISP mk II."
+	@echo ""
+	@echo "       test -- Calls 'cu' on /dev/ttyACM0 at 115.2 kbaud."
+	@echo "      testu -- Calls 'cu' on /dev/ttyUSB0 at 115.2 kbaud."
+	@echo "   testfast -- Calls 'cu' on /dev/ttyACM0 at 500 kbaud."
+	@echo "  testufast -- Calls 'cu' on /dev/ttyUSB0 at 500 kbaud."
+	@echo " testscreen -- Calls 'screen' on /dev/ttyACM0 at 115.2 kbaud."
+	@echo "testscreenu -- Calls 'screen' on /dev/ttyUSB0 at 115.2 kbaud."
+	@echo ""
+
+force: clean hex
+
+elf: $(BIN).elf
+
+hex: $(BIN).hex
+	cp $(BIN).hex ../hexfiles
+
+asm: $(BIN).asm
+
+clean:
+	rm -f $(BIN).elf
+	rm -f $(BIN).hex
+	rm -f $(BIN).asm
+
+$(BIN).hex: $(BIN).elf
+	avr-objcopy -j .text -j .data -O ihex $(BIN).elf $(BIN).hex
+
+$(BIN).elf: $(SRCS) $(HDRS)
+	avr-gcc $(CFLAGS) -o $(BIN).elf $(SRCS) $(LFLAGS)
+
+$(BIN).asm: $(BIN).elf
+	avr-objdump -d $(BIN).elf > $(BIN).asm
+
+
+# This looks for a boot loader (pretending to be a stk500).
+# FIXME - This blithely assumes we're on the first USB serial device and
+# are using Linux Mint 17's naming conventions.
+# NOTE - We need "-D" to cancel flash erase, as the boot loader refuses to
+# erase itself.
+
+burn: $(BIN).hex
+	avrdude -c stk500 -p m2560 -P /dev/ttyACM0 -D -U flash:w:$(BIN).hex:i
+
+# This uses USB0 rather than ACM0; we get that with clones with FTDI chips.
+burnftdi: $(BIN).hex
+	avrdude -c stk500 -p m2560 -P /dev/ttyUSB0 -D -U flash:w:$(BIN).hex:i
+
+# This looks for an Atmel AVR ISP Mk 2.
+
+burnisp: $(BIN).hex
+	avrdude -c avrispv2 -P usb -p m2560 -U flash:w:$(BIN).hex
+
+# FIXME - This blithely assumes we're on the first USB serial device and
+# are using Linux Mint 17's naming conventions.
+# NOTE - Using "-h" for manual echo from "cu", which makes life easier.
+# FIXME - Speed has to be specified manually. Use "test" for 115, "testfast"
+# for 500.
+# FIXME - Port depends on whether we're using the Arduino or the FTDI dongle.
+# Use "testu" and "testfastu" for USB0 (FTDI).
+
+test:
+	cu -h -l /dev/ttyACM0 -s 115200
+
+testfast:
+	cu -h -l /dev/ttyACM0 -s 500000
+
+testu:
+	cu -h -l /dev/ttyUSB0 -s 115200
+
+testfastu:
+	cu -h -l /dev/ttyUSB0 -s 500000
+
+# NOTE - FTDI and cu don't play nicely together.
+# Use ":quit" after a line feed (ctrl-A) to exit.
+
+testscreen:
+	screen /dev/ttyACM0 115200
+
+testscreenu:
+	screen /dev/ttyUSB0 115200
+
+
+#
+# This is the end of the file.
