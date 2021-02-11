@@ -51,7 +51,8 @@ project is installed in), and type "`make hex`".
 ## Remarks
 
 This project is at a milestone state, and is in service, but future changes
-are planned that will substantially affect the project's structure.
+are planned (eventually) that will substantially affect the project's
+structure.
 
 The present version will probably be kept as a branch, but the active version
 will make major changes:
@@ -82,7 +83,7 @@ certainly support that when implemented.
 * Right now, all of the printed circuit boards are project-specific. The
 boards are very similar to those used for other ACC Lab projects, and will
 eventually be merged into a single set of standard boards with as few
-project-specific components as possible. When that happens, all PCB layouts
+project-specific boards as possible. When that happens, all PCB layouts
 and front-panel mechanical plans that are not SynchBox-specific will be
 moved to that project.
 
