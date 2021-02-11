@@ -1,0 +1,11 @@
+This requires its own udev rules.
+The USB port is for programming only (detecting as a "USBtinyISP").
+Serial communication requires an FTDI cable.
+There are 3V and 5V versions of the board, with different regulators. They 
+can be distinguished by the voltage output pin's label.
+
+This does low-speed USB in software from the boot loader. If it's 
+USB-connected, it's programmed over USB, looking like a USBtinyISP; if it's 
+FTDI-connected, it's programmed like an Uno (compatible boot loaders).
+To trigger the boot loader, press-and-release reset. The boot loader times 
+out after 10 seconds.

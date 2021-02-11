@@ -1,0 +1,48 @@
+From a forum post by "johnnylongshot" on 17 Feb 2014, c/o Marcus:
+
+		*		*		*
+
+The file to change is
+
+/System/Library/Extensions/FTDIUSBSerialDriver.kext/Contents/Info.plist
+
+Here’s an excerpt from that file that I modified to alias 250000 baud as 300 and 500000 baud as 600
+
+      <key>FT232H</key>
+      <dict>
+           <key>CFBundleIdentifier</key>
+           <string>com.FTDI.driver.FTDIUSBSerialDriver</string>
+
+           <key>ConfigData</key>
+           <dict>
+                <key>BaudRates</key>
+                <dict>
+                     <key>B300</key>
+                     <integer>250000</integer>
+                     <key>B600</key>
+                     <integer>500000</integer>
+                </dict>
+           </dict>               
+
+           <key>IOClass</key>
+           <string>FTDIUSBSerialDriver</string>
+           <key>IOProviderClass</key>
+           <string>IOUSBInterface</string>
+           <key>bConfigurationValue</key>
+           <integer>1</integer>
+           <key>bInterfaceNumber</key>
+           <integer>0</integer>
+           <key>bcdDevice</key>
+           <integer>2304</integer>
+           <key>idProduct</key>
+           <integer>24596</integer>
+           <key>idVendor</key>
+           <integer>1027</integer>
+      </dict>
+
+after the change, be sure to unload and reload the driver
+sudo kextunload /System/Library/Extensions/FTDIUSBSerialDriver.kext
+sudo kextcache -system-caches
+sudo kextload /System/Library/Extensions/FTDIUSBSerialDriver.kext
+
+		*		*		*

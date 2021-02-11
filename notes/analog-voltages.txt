@@ -1,0 +1,35 @@
+As of 2020 June, analog input voltage dividers are configured for 0-5V input.
+
+To set them to different configurations, use the following resistor networks:
+
+
+0-5V in:
+
+- Input: 470k
+- Pull-up: none (inf)
+- Pull-down: 470k
+
+...Output range is 0.00-2.50 V.
+
+
++/- 5V in:
+
+- Input: 470k
+- Pull-up: 470k
+- Pull-down: 220k
+
+...Output range is 0.00-2.42 V.
+
+
++/- 10V in:
+
+- Input: 470k
+- Pull-up: 220k
+- Pull-down: 82k
+
+...Output range is 0.08-2.33 V.
+
+
+The pull-up must connect to a _filtered_ 5V supply.
+This assumes an ATmega2560 chip, with a 2.56V reference.
+The ATmega328P chip only has a 1.1V reference, needing different dividers.
