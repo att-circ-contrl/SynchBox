@@ -101,6 +101,8 @@ peripherals and accessories.
 * `manuals-src` -- Source for rebuilding the SynchBox documentation.
 * `notes` -- Assorted notes regarding SynchBox use and development.
 * `utils` -- Various helper scripts.
+* `vendor-docs` -- Vendor-provided documentation (other than datasheets).
+Under vendor copyright.
 
 
 Within each hardware component's folder the following subdirectories may be

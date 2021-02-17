@@ -1,0 +1,13 @@
+Pin mappings for "digital I/O" header (10-pin, back panel BNC):
+
+
+Header		Function		Arduino		Atmel
+
+D0		debug input		D6		H3
+D1		debug output		D7		H4
+D2					D8		H5
+D3					D9		H6
+D4		reward B		D10		B4
+D5		reward			D11		B5
+D6		sync			D12		B6
+D7		sync B			D13		B7

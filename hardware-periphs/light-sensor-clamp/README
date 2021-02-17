@@ -1,0 +1,23 @@
+See the LICENSE file for distribution information.
+
+Each clamp consists of three 3D printed parts, and two McMaster-Carr parts.
+
+The 3D printed parts are the body of the clamp (yellow in the assembly
+diagram), the wire-holding cap (green in the assembly diagram), and the
+sensor locator cap (red in the assembly diagram).
+
+To assemble the clamp:
+
+- Affix the foot (p/n 6111K451) to its feed hole in the clamp body, either
+by gluing the foot's mounting nut to the body or by gluing a 1/4"-20 threaded
+insert into the feed hole in the clamp body.
+- Verify that the foot travels freely, and glue the knob (p/n 6214K26) to
+the foot's threaded rod.
+- Feed the TEPT4400 phototransistor's leads through the locator cap's holes.
+- Feed the BNC pigtail's leads through the body of the clamp out of the
+sensor hole.
+- Solder the phototransistor's leads to the BNC pigtail's leads, using
+heat shrink or tape to avoid short circuits.
+- Press-fit the locator cap into the clamp body.
+- Slide the wire cap on to the BNC pigtail's leads.
+- Press-fit the wire cap on to the clamp body.
