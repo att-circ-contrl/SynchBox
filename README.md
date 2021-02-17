@@ -92,10 +92,71 @@ moved to that project.
 
 * `code-firmware` -- Firmware source code for the SynchBox.
 * `datasheets` -- Vendor-supplied datasheets. Under vendor copyright.
+* `hardware-main` -- Boards, CAM files, and drawings for the I/O SynchBox
+internal components.
+* `hardware-periphs` -- Boards, CAM files, meshes, and drawings for external
+peripherals and accessories.
 * `hexfiles` -- Firmware binaries for the SynchBox.
 * `manuals` -- SynchBox documentation.
 * `manuals-src` -- Source for rebuilding the SynchBox documentation.
 * `notes` -- Assorted notes regarding SynchBox use and development.
+* `utils` -- Various helper scripts.
+
+
+Within each hardware component's folder the following subdirectories may be
+present:
+
+* `boards` -- Printed circuit board design files. Anything with the `.pcb`
+extension was made with the "`pcb`" program (now part of `gEDA`).
+* `boards/gerber` -- Files for printed circuit board fabrication as generated
+by `pcb`.
+* `boards/plots` -- Manually assembled renderings of the circuit board layout.
+* `cad` -- CAD files (mechanical models) for cases and faceplates. Files with
+the `.fcstd` extension were made with the "`FreeCAD`" program. Files with
+`.iges` and `.step` extensions are models exported to industry-standard
+formats that can be imported into different CAD programs.
+* `drawings` -- Mechanical drawings of boards, cases, and faceplates.
+* `mech` -- CAM files (toolpaths) for cases and faceplates. Files with the
+`.crv` extension were made with Vectric's `VCut` program. Files with the
+`.crv3d` extension were made with Vectric's `Aspire` program but can probably
+be imported into `VCut`. Files with the `.txt` extension are g-code; the tool
+for each g-code file is usually indicated in the filename.
+* `meshes` -- STL meshes for 3d printed parts.
+* `notes` -- Assorted design documentation not covered above.
+* `packages` -- Automatically generated files derived from the above. This
+typically includes a `.zip` archive of the gerber files using the naming
+conventions of the "Seeed Studio" PCB fabrication service, a .png rendering
+of the board generated from the gerber files, .zip archives containing g-code
+toolpaths for various hardware parts, and .stl files containing meshes for
+various hardware parts.
+* `schematics` -- Manually generated schematics for printed circuit boards.
+Anything with the `.fig` extension was made with the "`xfig`" program.
+
+
+Regarding the software tools used:
+
+* I have a love/hate relationship with the `pcb` program. It works just well
+enough that it isn't worth my time to learn a new program, but the parts of
+the interface that I use have gone steadily downhill since 2003. It also
+won't check a layout against a netlist, which is vital for anything more
+complicated than the boards in this project. If you need to modify existing
+board layouts, I suggest importing the gerber files into your preferred PCB
+CAD program rather than trying to use the design files as-is.
+
+* I have a love/hate relationship with the `FreeCAD` program. It works just
+well enough that it isn't worth my time to learn a new program, but it has
+very strange ideas about how many operations should be done and it lacks
+several features that would be very helpful for building models. If you need
+to modify existing mechanical models, I suggest importing `.step` or `.iges`
+models into your preferred CAD program.
+
+* I've had good experiences with Vectric's CAM software, and the price for
+`VCut` is reasonable for hobbyists. This generates 2D toolpaths at multiple
+depths, so it's fine for cases and faceplates for electronics. That said,
+it should be possible to convert EPS to DXF and import DXF into any CAM
+program, or to reimplement the case designs very quickly using the mechanical
+drawings, so any CAM program should be sufficient if you need to generate
+new toolpaths.
 
 
 _This is the end of the file._

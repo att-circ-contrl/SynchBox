@@ -1,0 +1,17 @@
+G04 start of page 4 for group 6 idx 6 *
+G04 Title: (unknown), outline *
+G04 Creator: pcb 20140316 *
+G04 CreationDate: Wed 12 Dec 2018 10:26:37 PM GMT UTC *
+G04 For: thomasc *
+G04 Format: Gerber/RS-274X *
+G04 PCB-Dimensions (mil): 3750.00 5000.00 *
+G04 PCB-Coordinate-Origin: lower left *
+%MOIN*%
+%FSLAX25Y25*%
+%LNOUTLINE*%
+%ADD36C,0.0250*%
+G54D36*X0Y500000D02*X375000D01*
+Y0D02*X0D01*
+Y500000D01*
+X375000Y0D02*Y500000D01*
+M02*
