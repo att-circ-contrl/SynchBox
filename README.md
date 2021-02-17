@@ -129,26 +129,28 @@ conventions of the "Seeed Studio" PCB fabrication service, a .png rendering
 of the board generated from the gerber files, .zip archives containing g-code
 toolpaths for various hardware parts, and .stl files containing meshes for
 various hardware parts.
+* `renders` -- Renders of mechanical models of cases, faceplates, and
+assemblies.
 * `schematics` -- Manually generated schematics for printed circuit boards.
 Anything with the `.fig` extension was made with the "`xfig`" program.
 
 
 Regarding the software tools used:
 
-* I have a love/hate relationship with the `pcb` program. It works just well
-enough that it isn't worth my time to learn a new program, but the parts of
-the interface that I use have gone steadily downhill since 2003. It also
-won't check a layout against a netlist, which is vital for anything more
-complicated than the boards in this project. If you need to modify existing
-board layouts, I suggest importing the gerber files into your preferred PCB
-CAD program rather than trying to use the design files as-is.
+* I have a love/hate relationship with the `pcb` program. It works _just_
+well enough that it isn't worth my time to learn a new program, but the
+parts of the interface that I use have gone steadily downhill since 2003.
+It also won't check a layout against a netlist, which is vital for anything
+more complicated than the boards in this project. If you need to modify
+existing board layouts, I suggest importing the gerber files into your
+preferred PCB CAD program rather than trying to use the design files as-is.
 
-* I have a love/hate relationship with the `FreeCAD` program. It works just
-well enough that it isn't worth my time to learn a new program, but it has
-very strange ideas about how many operations should be done and it lacks
-several features that would be very helpful for building models. If you need
-to modify existing mechanical models, I suggest importing `.step` or `.iges`
-models into your preferred CAD program.
+* I have a love/hate relationship with the `FreeCAD` program. It works
+_just_ well enough that it isn't worth my time to learn a new program, but
+it has very strange ideas about how many operations should be done and it
+lacks several features that would be very helpful for building models. If
+you need to modify existing mechanical models, I suggest importing `.step`
+or `.iges` models into your preferred CAD program.
 
 * I've had good experiences with Vectric's CAM software, and the price for
 `VCut` is reasonable for hobbyists. This generates 2D toolpaths at multiple

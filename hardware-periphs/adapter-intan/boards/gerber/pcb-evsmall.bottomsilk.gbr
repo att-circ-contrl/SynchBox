@@ -1,0 +1,20 @@
+G04 start of page 9 for group -4078 idx -4078 *
+G04 Title: (unknown), bottomsilk *
+G04 Creator: pcb 20140316 *
+G04 CreationDate: Wed 08 Jan 2020 10:14:59 PM GMT UTC *
+G04 For: thomasc *
+G04 Format: Gerber/RS-274X *
+G04 PCB-Dimensions (mil): 1500.00 625.00 *
+G04 PCB-Coordinate-Origin: lower left *
+%MOIN*%
+%FSLAX25Y25*%
+%LNBOTTOMSILK*%
+%ADD33C,0.0100*%
+G54D33*X5610Y9626D02*X145374D01*
+Y25374D01*
+X5610D01*
+Y9626D01*
+X141437D02*Y5689D01*
+X137500D01*
+Y9626D01*
+M02*
