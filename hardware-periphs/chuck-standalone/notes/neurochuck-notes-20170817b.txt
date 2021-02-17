@@ -1,0 +1,100 @@
+From thomasc@cse.yorku.ca Thu Aug 17 15:06:30 2017
+Date: Thu, 17 Aug 2017 15:06:29 -0400 (EDT)
+From: Christopher Thomas <thomasc@cse.yorku.ca>
+To: Ben Voloh <ben.voloh@gmail.com>
+Cc: Marcus Watson <marcusrwatson@gmail.com>
+Subject: Re: new nunchuk idea
+
+
+   I've attached the code, and an updated hex file (I'd forgotten that 
+buttons were negative-logic in the raw data; this has been fixed).
+
+   I gave the templates for output in a previous email. Actual test-run 
+output is as follows:
+
+(no timestamps; LTS 0):
+
+J7b801L8461b0
+J7c811L7f5db2
+J7b800L8160b2
+J7c810L7f60b0
+J7b801L7f5ab4
+J7b800L805fb2
+J7b800L815db0
+J7c802L825eb2
+J7b802L805bb1
+J7b802L815db3
+J7b802L805db1
+J7c812L835db6
+J7b802L815cb9
+J7b800L8c5cad
+J7b800L9b5398
+J7b800L944d93
+J7b800L8c4d99
+
+(with timestamps; LTS 1, the default):
+
+T0002d453J7cff0L8c69af
+T0002d83bJ7cff0L8d57b1
+T0002dc23J7bff0L8c56a9
+T0002e00bJ7cff0L8d57ab
+T0002e3f3J7cff0L8d57ac
+T0002e7dbJ7cff0L8d58ad
+T0002ebc3J7bff0L8d58ad
+T0002efabJ7cff0L8f56a8
+T0002f393J7b800L984d9a
+T0002f77bJ7b800La04d91
+T0002fb63J7b800L866196
+T0002ff4bJ7b800L628493
+T00030333J7c800L1995a5
+T0003071bJ7b800L37848c
+T00030b03J7b800L3b8988
+T00030eebJ7b800L468c91
+T000312d3J7b800L468595
+
+(the status screen; QRY):
+
+System state (all values in base 10):
+   Version:  20170810
+   Timestamp:  54900 ticks
+   Clock ticks per second:  10000
+   Nunchuck detected:  YES
+   Nunchuck polling interval:  100 ticks
+   Nunchuck data scrambling:  OFF
+   Automatic start:  NO
+   Logging:  OFF
+   Log interval:  1000 ticks
+   Log timestamps:  ON
+   Blink codes:  ON
+   Clock ticks per blink code bit:  625
+End of system state.
+
+(the identity string; IDQ):
+
+devicetype: Neurochuck  subtype: v1  revision: 20170810
+
+(the help screen; HLP or ?):
+
+Commands:
+  ?, HLP  :  Help screen.
+     QRY  :  Query system state.
+   ECH 1/0:  Start/stop echoing typed characters back to the host.
+     IDQ  :  Device identification string query.
+     INI  :  Reinitialize (clock reset and events idled).
+   LOG 1/0:  Start/stop reporting log data.
+     LIN n:  Set the data reporting interval to n ticks.
+   LTS 1/0:  Include/don't include timestamps in log reports.
+     KIN n:  Set the nunchuck polling interval to n ticks.
+   BLN 1/0:  Enable/disable status LED blinking.
+
+
+Regards,
+ 				-Christopher Thomas
+
+    [ Part 2, ""  Application/X-TAR (Name: "neurochuck-20170817.tar") 84 ]
+    [ KB. ]
+    [ Unable to print this part. ]
+
+
+    [ Part 3, ""  Text/PLAIN (Name: "neurochuck-20170817-5v.hex") ~30 KB. ]
+    [ Unable to print this part. ]

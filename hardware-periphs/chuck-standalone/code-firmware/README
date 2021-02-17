@@ -1,0 +1,43 @@
+Important things to note:
+
+- Arduino's development environment will auto-detect and include any file
+  that has a .ino, .c, .cpp, or .h extension.
+
+- The Arduino IDE doesn't like hyphens in filenames; use underscores instead.
+
+- I gave the Makefile a customized name to avoid confusing the Arduino IDE.
+
+
+Using the NeurAVR library and not the Arduino IDE:
+
+- FIXME - The NeurAVR does not yet support I2C, so building this way will
+give you bogus data!
+
+- To build using the NeurAVR library instead of using Arduino, use
+"make -f Makefile.neuravr (optional target)". Default target is "hex";
+"clean" removes binaries so that the Arduino IDE doesn't complain about them.
+
+- Development targets are "burn" (using the bootloader), "isp" (using the
+AVRispMk2 programmer), and "test" (trying to contact using "cu"). These only
+work on my personal machines; you'll have to edit them to get them working
+on your systems (these are convenience-targets; these tasks can be done
+manually easily enough).
+
+
+Using the Arduino IDE:
+
+- On my machine, under Linux, the Arduino IDE sometimes can't open the serial
+  port to burn the sketch. The sketch can be burned manually via:
+
+  avrdude -c stk500 -p m2560 -P /dev/ttyACM(number) -U flash:w:(hex file):i
+
+  (The -D flag may also be needed if flash-erase fails.)
+
+  The Arduino IDE puts the hex file in
+  /tmp/build(gibberish).tmp/(filename).hex.
+  Use "ls -t /tmp|grep build|head -1" to find the right build directory.
+
+- There may also be shenanigans connecting to the serial port. To do this
+  manually, use:
+
+  cu -l /dev/ttyACM(number) -s (baud)

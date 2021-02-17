@@ -1,0 +1,126 @@
+# Attention Circuits Control Laboratory - Nunchuck adapter
+# Makefile for building with the NeurAVR libraries.
+# Written by Christopher Thomas.
+# Copyright (c) 2021 by Vanderbilt University. This work is released under
+# the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+#
+# Configuration.
+
+# Source files.
+
+HRDS=	\
+	neurochuck_config.h	\
+	neurochuck_events.h	\
+	neurochuck_host.h	\
+	neurochuck_includes.h	\
+	neurochuck_io.h		\
+	neurochuck_i2c.h	\
+	neurochuck_led.h	\
+	neurochuck_main.h	\
+	neurochuck_parse.h	\
+	neurochuck_timer.h	\
+	neurochuck_wiichuck.h
+
+SRCS=	\
+	neurochuck_events.cpp		\
+	neurochuck_host.cpp		\
+	neurochuck_io.cpp		\
+	neurochuck_i2c_arduino.cpp	\
+	neurochuck_led.cpp		\
+	neurochuck_main.cpp		\
+	neurochuck_parse.cpp		\
+	neurochuck_timer_arduino.cpp	\
+	neurochuck_timer_neuravr.cpp	\
+	neurochuck_wiichuck.cpp
+
+# Target name.
+BIN=neurochuck
+
+
+# Compiler flags.
+
+# NOTE - You'll have to edit this path appropriately.
+NEURAVRPATH=../../neuravr
+
+CFLAGS=\
+	-Os -fno-exceptions				\
+	-I$(NEURAVRPATH)/include -L$(NEURAVRPATH)/lib	\
+	-D__AVR_ATmega328P__ -mmcu=atmega328p		\
+	-DUSE_NEURAVR
+
+LFLAGS=-lneur-m328p
+
+
+#
+# Targets.
+
+default: clean hex
+
+elf: $(BIN).elf
+hex: $(BIN).hex
+asm: $(BIN).asm
+
+# Specify a programming mode that works for this unit.
+program: ispt
+
+clean:
+	rm -f $(BIN).elf
+	rm -f $(BIN).hex
+	rm -f $(BIN).asm
+
+$(BIN).hex: $(BIN).elf
+	avr-objcopy -j .text -j .data -O ihex $(BIN).elf $(BIN).hex
+
+$(BIN).elf: $(SRCS) $(HDRS)
+	avr-gcc $(CFLAGS) -o $(BIN).elf $(SRCS) $(LFLAGS)
+
+$(BIN).asm: $(BIN).elf
+	avr-objdump -d $(BIN).elf > $(BIN).asm
+
+
+# This looks for a boot loader (pretending to be a stk500).
+# FIXME - This blithely assumes we're on the first USB serial device and
+# are using Linux Mint 17's naming conventions.
+# NOTE - We need "-D" to cancel flash erase, as the boot loader refuses to
+# erase itself.
+
+burn: $(BIN).hex
+	avrdude -c stk500 -p m328p -P /dev/ttyACM0 -D -U flash:w:$(BIN).hex:i
+
+# Variant for burning over FTDI cables (/dev/ttyUSB0).
+burnu: $(BIN).hex
+	avrdude -c stk500 -p m328p -P /dev/ttyUSB0 -D -U flash:w:$(BIN).hex:i
+
+# This looks for an Atmel AVR ISP Mk 2.
+
+isp: $(BIN).hex
+	avrdude -c avrispv2 -P usb -p m328p -U flash:w:$(BIN).hex
+
+# Variant for USBtinyISP (and Adafruit devices pretending to be these).
+ispt: $(BIN).hex
+	avrdude -c usbtiny -P usb -p m328p -U flash:w:$(BIN).hex
+
+# FIXME - This blithely assumes we're on the first USB serial device and
+# are using Linux Mint 17's naming conventions.
+# NOTE - Using "-h" for manual echo from "cu", which makes life easier.
+# FIXME - Speed has to be specified manually. Use "test" for 115, "testfast"
+# for 230.
+# FIXME - Port depends on whether we're using the Arduino or the FTDI dongle.
+# Use "testu" and "testufast" for USB0 (FTDI).
+
+test:
+	cu -h -l /dev/ttyACM0 -s 115200
+
+testfast:
+	cu -h -l /dev/ttyACM0 -s 500000
+
+testu:
+	cu -h -l /dev/ttyUSB0 -s 115200
+
+testufast:
+	cu -h -l /dev/ttyUSB0 -s 500000
+
+
+#
+# This is the end of the file.

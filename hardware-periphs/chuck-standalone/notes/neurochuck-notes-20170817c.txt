@@ -1,0 +1,37 @@
+From thomasc@cse.yorku.ca Thu Aug 17 15:11:46 2017
+Date: Thu, 17 Aug 2017 15:11:46 -0400 (EDT)
+From: Christopher Thomas <thomasc@cse.yorku.ca>
+To: Ben Voloh <ben.voloh@gmail.com>
+Cc: Marcus Watson <marcusrwatson@gmail.com>
+Subject: Re: new nunchuk idea
+
+
+   As with the Neurarduino code, you can dump it all into a sketchbook 
+directory and build it using the IDE as-is, or you can use "make -f 
+Makefile.neuravr" to build against the "neuravr" libraries that I'd made 
+for the Neurarduino and related hardware.
+
+   The custom libraries don't have I2C yet, so I recommend using the 
+Arduino IDE if you want it to actually sense nunchuck data.
+
+
+   To talk to the dongle, connect via USB serial port at 115200 baud.
+
+   The status LED is blinking on and off when it can't find the nunchuck, 
+is solid-on with an off-blip every 2 seconds when it found the nunchuck 
+but you haven't requested data, and is off with a pair of on-blips every 2 
+seconds when it's streaming data to you.
+
+   Pulling digital pin 8 to ground triggers "automatic" mode, where it 
+starts streaming on startup rather than waiting for you to ask it to. In 
+that mode, it omits timestamps and sends data as fast as possible 
+(equivalent to LIN 0, KIN 0, LTS 0, LOG 1).
+
+
+   I'll bring the dongle (and Marcus's Neurarduino) back to Marcus's desk 
+as soon as I've finished taking measurements for the case.
+
+
+Regards,
+ 				-Christopher Thomas
+

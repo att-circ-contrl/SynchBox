@@ -1,0 +1,48 @@
+From thomasc@cse.yorku.ca Thu Aug 17 10:47:26 2017
+Date: Thu, 17 Aug 2017 10:47:26 -0400 (EDT)
+From: Christopher Thomas <thomasc@cse.yorku.ca>
+To: Ben Voloh <ben.voloh@gmail.com>, Marcus Watson <marcusrwatson@gmail.com>
+Subject: Neurochuck firmware
+
+
+   In case anyone besides me wants to flash more of these, here's the 
+firmware image for the version of the "neurochuck" I have now. This should 
+work on any 16 MHz ATmega328P system, including the Uno and Pro Trinket.
+
+   (The 3.3V Pro Trinket runs at 12 MHz instead, which will throw off 
+timing, including baud rate timing.)
+
+
+   It supplies "power" and "ground" to Ain3 (C3) and Ain2 (C2), 
+respectively. It uses the LED on Dio13 (B5/SCK) for status indication. If 
+you pull down Dio8 (B0) during boot, it'll start spitting out packed data 
+automatically without you having to tell it to (this is how it would work 
+if I put it in the Neurarduino box).
+
+   The command interface is very similar to the Neurarduino's. Connect at 
+115200 baud, type "hlp" or "?" for help, and "idq" to query the device 
+type string (so that you can tell this and the neurarduino apart).
+
+   With timestamps enabled (default for manual mode), output looks like:
+
+   TnnnnnnnnJxxyycLxxyyzz
+
+   Without timestamps (default for autostart mode), output looks like:
+
+   JxxyycLxxyyzz
+
+   Joystick (J) and accelerometer (L) values are 8-bit hex-encoded bytes. 
+Button values are one hex digit (0-3 in practice; C is bit 0 and Z is 
+bit 1).
+
+
+   If you want a packaged version immediately, I have a case on-hand that I 
+can put it into if you don't mind rough-cut holes. Otherwise let me know 
+how you want me to proceed with it.
+
+
+Regards,
+ 				-Christopher Thomas
+
+    [ Part 2, ""  Text/PLAIN (Name: "neurochuck-20170817.hex") ~30 KB. ]
+    [ Unable to print this part. ]

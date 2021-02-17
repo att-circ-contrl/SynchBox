@@ -1,0 +1,7 @@
+This board didn't work!
+
+I had to remove the isolator chips and bridge across their pads to make a
+pass-through, instead of using isolation.
+
+This passed multiple desk-checks against the chips' datasheets, so I'm not
+sure what went wrong.
