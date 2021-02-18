@@ -106,7 +106,7 @@ peripherals and accessories.
 * `manuals-src` -- Source for rebuilding the SynchBox documentation.
 * `notes` -- Assorted notes regarding SynchBox use and development.
 * `packages` -- Automatically generated archives packaging relevant files
-for making hardware componens and peripherals. This typically includes a
+for making hardware components and peripherals. This typically includes a
 `.zip` archive of the gerber files using the naming conventions of the
 "Seeed Studio" PCB fabrication service, a `.png` rendering of the board
 generated from the gerber files, a `.zip` archive containing g-code
