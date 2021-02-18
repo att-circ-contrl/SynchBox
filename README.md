@@ -49,8 +49,8 @@ project is installed in), and type "`make hex`".
 
 * To build release packages for all of the I/O SynchBox's hardware
 components and peripherals, type "`make hwpkgs`". Board fabrication
-files, meshes, and various documentation files are left in the subprojects'
-"`packages`" directories.
+files, meshes, and various documentation files are left in subfolders in
+the "`packages`" directory.
 
 
 ## Remarks
@@ -105,6 +105,13 @@ peripherals and accessories.
 * `manuals` -- SynchBox documentation.
 * `manuals-src` -- Source for rebuilding the SynchBox documentation.
 * `notes` -- Assorted notes regarding SynchBox use and development.
+* `packages` -- Automatically generated archives packaging relevant files
+for making hardware componens and peripherals. This typically includes a
+`.zip` archive of the gerber files using the naming conventions of the
+"Seeed Studio" PCB fabrication service, a `.png` rendering of the board
+generated from the gerber files, a `.zip` archive containing g-code
+toolpaths for various hardware parts, `.stl` files containing meshes for
+various hardware parts, and other documentation as appropriate.
 * `utils` -- Various helper scripts.
 * `vendor-docs` -- Vendor-provided documentation (other than datasheets).
 Under vendor copyright.
@@ -130,12 +137,8 @@ be imported into `VCut`. Files with the `.txt` extension are g-code; the tool
 for each g-code file is usually indicated in the filename.
 * `meshes` -- STL meshes for 3d printed parts.
 * `notes` -- Assorted design documentation not covered above.
-* `packages` -- Automatically generated files derived from the above. This
-typically includes a `.zip` archive of the gerber files using the naming
-conventions of the "Seeed Studio" PCB fabrication service, a .png rendering
-of the board generated from the gerber files, .zip archives containing g-code
-toolpaths for various hardware parts, and .stl files containing meshes for
-various hardware parts.
+* `packages` -- A symbolic link to the project's sub-folder in the
+top-level "`packages`" directory.
 * `renders` -- Renders of mechanical models of cases, faceplates, and
 assemblies.
 * `schematics` -- Manually generated schematics for printed circuit boards.
