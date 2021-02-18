@@ -1,0 +1,7 @@
+This code is intended to interface with the "Adafruit Pro Trinket 5V", which
+is a smaller-form-factor variant of the Arudino Pro/Arduino Pro Mini, using
+an ATmega328P chip at 16 MHz (as with the Arduino Uno).
+
+An Adafruit "Nunchucky" board was used as the Wii Nunchuck break-out adapter.
+If memory serves, it mated directly with the digital I/O pins on the
+Pro Trinket, but it's been many years so I no longer remember the details.
