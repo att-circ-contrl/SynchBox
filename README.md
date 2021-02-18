@@ -47,6 +47,11 @@ project is installed and "`neuravr`" is symlinked at an appropriate
 location (in the "`code-firmware`" folder or in the folder the "`SynchBox`"
 project is installed in), and type "`make hex`".
 
+* To build release packages for all of the I/O SynchBox's hardware
+components and peripherals, type "`make hwpkgs`". Board fabrication
+files, meshes, and various documentation files are left in the subprojects'
+"`packages`" directories.
+
 
 ## Remarks
 

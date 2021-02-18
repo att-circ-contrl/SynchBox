@@ -8,7 +8,7 @@ default: helpscreen
 
 helpscreen:
 	@echo ""
-	@echo "Targets:   manual  hex  burn"
+	@echo "Targets:   manual  hex  burn  hwpkgs"
 	@echo ""
 
 manual:
@@ -24,8 +24,15 @@ hex:
 burn:
 	make -C hexfiles burnard
 
+# This recurses to rebuild hardware release packages for each sub-project.
+hwpkgs:
+	make -C hardware-main release
+	make -C hardware-periphs release
 
-# FIXME - Make "bundle PCB release" targets here too?
+# Undocumented target: Remove the hardware release packages.
+hwclean:
+	make -C hardware-main clean
+	make -C hardware-periphs clean
 
 
 #

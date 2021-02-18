@@ -6,14 +6,14 @@ then
 echo ""
 echo "Usage:  pcb2seeed <base gerber filename> <project label>"
 echo ""
-echo "This creates a label.ZIP archive containing renamed gerber/drill files."
+echo "This creates a label.zip archive containing renamed gerber/drill files."
 echo ""
 
 else
 
 GBASE=$1
 PNAME=$2
-ZIPNAME=$PNAME.ZIP
+ZIPNAME=$PNAME.zip
 
 TMPDIR=/tmp/seeedtemp
 THISDIR=`pwd`
