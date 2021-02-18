@@ -1,0 +1,17 @@
+Bill of materials for the v2 SynchBox back panel:
+
+Item                    Digikey p/n          Qty
+
+header male 2x5 shr     S9169-ND               1
+
+BNC jack (pcb) 50 ohm   WM5278-ND              8
+
+ribbon cable 10pos 6"   H3DDS-1006G-ND         1
+USB B panel mount       1528-1570-ND           1
+
+spacer nylon #4 1/16"   492-1071-ND            4
+screw metal 4-40 3/8"   HM1456-ND              4
+hex nut nylon 4-40      36-9605-ND             4
+
+
+This is the end of the file.

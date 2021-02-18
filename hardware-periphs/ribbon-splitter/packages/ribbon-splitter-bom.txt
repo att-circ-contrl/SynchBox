@@ -1,0 +1,19 @@
+Splitter board, R/A version:
+
+Item				Digikey p/n	Unit Price	Qty	Cost
+
+header male ra 2x5 shr		S9177-ND	0.63		2	1.26
+header male ra 2x17 shr		S9182-ND	1.20		1	1.20
+
+Total									2.46
+
+
+
+Splitter board, vertical version:
+
+Item				Digikey p/n	Unit Price	Qty	Cost
+
+header male 2x5 shr		S9169-ND	0.42		2	0.84
+header male 2x17 shr		S9174-ND	0.68		1	0.68
+
+Total									1.52

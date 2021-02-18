@@ -1,0 +1,35 @@
+Bill of materials for the v2 SynchBox shield:
+
+Item                    Digikey p/n          Qty
+
+header male 1x8         732-5321-ND            5
+header male 1x10        732-2670-ND            1
+header male 2x18        732-5309-ND            1
+header female 2x3       S7071-ND               1
+header male 2x5 shr     S9169-ND               1
+header male 2x8 shr     S9171-ND               1
+header male 2x10 shr    S9172-ND               1
+
+resistor 0805 4.7 ohm   311-4.70CRCT-ND        1
+resistor 0805 680 ohm   311-680CRCT-ND         1
+resistor 0805 1 kohm    311-1.00KCRCT-ND       2
+resistor 0805 2.2 kohm  311-2.20KCRCT-ND       2
+resistor 0805 5.49 kohm 311-5.49KCRCT-ND       2
+resistor 0805 6.8 kohm  311-6.80KCRCT-ND       2
+resistor 0805 10 kohm   311-10.0KCRCT-ND       4
+resistor 0805 47 kohm   311-47.0KCRCT-ND       3
+resistor 0805 470 kohm  311-470KCRCT-ND       12
+resistor 0805 10 Mohm   311-10.0MCRCT-ND       4
+
+inductor smt 0.47mH     732-6801-1-ND          1
+
+capacitor 1210 47 uF    399-5514-1-ND          4
+capacitor 0805 10 uF    399-8012-1-ND          2
+capacitor 0805 0.33 uF  399-11172-1-ND         2
+capacitor 0805 0.1 uF   399-1170-1-ND          2
+
+AD8616 op-amp 8-soic    AD8616ARZ-ND           2
+AD8226 inst amp 8-soic  AD8226ARZ-ND           2
+
+
+This is the end of the file.

@@ -12,8 +12,8 @@ helpscreen:
 	@echo ""
 
 
-SRCBASE=v2-ain-gprect-stat
-DSTBASE=synchbox-frontpanel
+SRCBASE=pcb-evsmall
+DSTBASE=adapter-intan
 
 UPATH=../../../../utils/
 
@@ -23,9 +23,7 @@ clean:
 release: clean
 	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp drawings/v2a-ain-gprect-stat.eps packages/$(DSTBASE)-drawing.eps
-	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
-	cp notes/v2-frontpanel-bom.txt packages/$(DSTBASE)-bom.txt
+	cp notes/adapter-intan-bom.txt packages/$(DSTBASE)-bom.txt
 
 #
 # This is the end of the file.

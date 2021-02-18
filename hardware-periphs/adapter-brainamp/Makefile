@@ -12,8 +12,8 @@ helpscreen:
 	@echo ""
 
 
-SRCBASE=v2-ain-gprect-stat
-DSTBASE=synchbox-frontpanel
+SRCBASE=adapter-brainamp
+DSTBASE=adapter-brainamp
 
 UPATH=../../../../utils/
 
@@ -23,9 +23,9 @@ clean:
 release: clean
 	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp drawings/v2a-ain-gprect-stat.eps packages/$(DSTBASE)-drawing.eps
-	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
-	cp notes/v2-frontpanel-bom.txt packages/$(DSTBASE)-bom.txt
+	cp drawings/$(SRCBASE)-drawing.png packages/$(DSTBASE)-drawing.png
+	cp drawings/$(SRCBASE)-laser.eps packages/$(DSTBASE)-lasercut.eps
+	cp drawings/$(SRCBASE)-label.pdf packages/$(DSTBASE)-label.pdf
 
 #
 # This is the end of the file.

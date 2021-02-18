@@ -12,8 +12,8 @@ helpscreen:
 	@echo ""
 
 
-SRCBASE=v2-ain-gprect-stat
-DSTBASE=synchbox-frontpanel
+SRCBASE=pcb-evbig
+DSTBASE=ribbon-splitter
 
 UPATH=../../../../utils/
 
@@ -23,9 +23,11 @@ clean:
 release: clean
 	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp drawings/v2a-ain-gprect-stat.eps packages/$(DSTBASE)-drawing.eps
-	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
-	cp notes/v2-frontpanel-bom.txt packages/$(DSTBASE)-bom.txt
+	cp notes/ribbon-splitter-bom.txt packages/$(DSTBASE)-bom.txt
+	cp notes/pinout.txt packages/$(DSTBASE)-pinout.txt
+	cd meshes; zip ../packages/$(DSTBASE)-meshes.zip *stl
+	cp renders/event-cable-adapter-vert.png packages/$(DSTBASE)-render.png
+	cp drawings/evbig-mech.png packages/$(DSTBASE)-drawing.png
 
 #
 # This is the end of the file.

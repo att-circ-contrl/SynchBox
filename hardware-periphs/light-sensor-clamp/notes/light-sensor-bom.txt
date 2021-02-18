@@ -1,0 +1,17 @@
+Bill of materials for the SynchBox light sensor (per pair):
+
+
+Item                    Digikey p/n          Qty
+
+phototransistor         751-1057-ND            2
+BNC to wire cable       314-1190-ND            2
+BNC cable 6'            ACX1799-ND             2
+
+
+Item                 McMaster-Carr p/n       Qty
+
+leveling foot        6111K451                  2
+threaded knob        6214K26                   2
+
+
+This is the end of the file.

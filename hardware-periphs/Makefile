@@ -12,16 +12,26 @@ helpscreen:
 	@echo ""
 
 clean:
+	make -C adapter-brainamp clean
+	make -C adapter-intan clean
+	make -C light-sensor-clamp clean
+	make -C ribbon-splitter clean
 
-#	make -C v2-shield clean
-#	make -C v2-frontpanel clean
-#	make -C v2-backpanel clean
+#	make -C adapter-neuroscan clean
+#	make -C adapter-tobii clean
+#	make -C chuck-standalone clean
+#	make -C joystick-2016 clean
 
 release:
+	make -C adapter-brainamp release
+	make -C adapter-intan release
+	make -C light-sensor-clamp release
+	make -C ribbon-splitter release
 
-#	make -C v2-shield release
-#	make -C v2-frontpanel release
-#	make -C v2-backpanel release
+#	make -C adapter-neuroscan release
+#	make -C adapter-tobii release
+#	make -C chuck-standalone release
+#	make -C joystick-2016 release
 
 #
 # This is the end of the file.

@@ -1,0 +1,19 @@
+Small ribbon to Intan terminal block board:
+
+Item				Digikey p/n	Unit Price	Qty	Cost
+
+header male 2x5 shr		S9169-ND	0.42		1	0.42
+header male 3.5mm 4pos		WM12840-ND	0.63		1	0.63
+header male 3.5mm 3pos		WM20447-ND	0.47		2	0.94
+
+Total									1.99
+
+
+
+Cabling:
+
+Item				Digikey p/n	Unit Price	Qty	Cost
+
+cable idc 2x5 female 18"	H3DDH-1018-G-ND	1.51		2	3.02
+
+Total									3.02

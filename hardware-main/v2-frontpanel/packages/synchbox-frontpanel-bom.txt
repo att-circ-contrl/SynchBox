@@ -1,0 +1,21 @@
+Bill of materials for the v2 SynchBox front panel:
+
+Item                    Digikey p/n          Qty
+
+header male 2x8 shr     S9171-ND               1
+header male 2x10 shr    S9172-ND               1
+header male 2x17 shr    OR984-ND               1
+
+BNC jack (pcb) 50 ohm   WM5278-ND              5
+LED green 3mm           4303F5-ND              1
+switch pb SPST          SW1021CT-ND            1
+
+ribbon cable 16pos 6"   H3DDS-1606G-ND         1
+ribbon cable 20pos 6"   H3DDS-2006G-ND         1
+
+spacer nylon #4 1/16"   492-1071-ND            4
+screw metal 4-40 3/8"   HM1456-ND              4
+hex nut nylon 4-40      36-9605-ND             4
+
+
+This is the end of the file.

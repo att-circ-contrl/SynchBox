@@ -1,0 +1,5 @@
+On the original 34-pin header, even pins are ground, pins 1..31 are digital
+outputs (LS pin 1), and pin 33 is +5V.
+
+On the 10-pin output headers, pin 1 is ground, pins 2..9 are digital outputs
+(LS pin 2), and pin 10 is ground.

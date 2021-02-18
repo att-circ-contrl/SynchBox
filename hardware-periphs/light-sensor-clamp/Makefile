@@ -12,8 +12,8 @@ helpscreen:
 	@echo ""
 
 
-SRCBASE=v2-bnc-gpio
-DSTBASE=synchbox-backpanel
+SRCBASE=
+DSTBASE=light-sensor
 
 UPATH=../../../../utils/
 
@@ -21,11 +21,10 @@ clean:
 	rm -f packages/*
 
 release: clean
-	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
-	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp drawings/v2a-cam-gpio-usb.eps packages/$(DSTBASE)-drawing.eps
-	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
-	cp notes/v2-backpanel-bom.txt packages/$(DSTBASE)-bom.txt
+	cd meshes; zip ../packages/$(DSTBASE)-meshes.zip *stl
+	cp notes/light-sensor-bom.txt packages/$(DSTBASE)-bom.txt
+	cp notes/NOTES-assembly packages/$(DSTBASE)-assembly.txt
+	cp renders/clamp-assembly.png packages/$(DSTBASE)-assembly.png
 
 #
 # This is the end of the file.
