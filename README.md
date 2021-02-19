@@ -36,7 +36,7 @@ Linux, at least):
 
 * Type "`make`" without arguments for the Makefile target list.
 
-* To rebuild the manuals (which shuld already be in the "`manuals`" folder),
+* To rebuild the manuals (which should already be in the "`manuals`" folder),
 type "`make manual`".
 
 * To flash an I/O SynchBox using the firmware hex file, plug the device
