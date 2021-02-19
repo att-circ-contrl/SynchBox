@@ -26,6 +26,7 @@ release: clean
 	cp drawings/$(SRCBASE)-drawing.png packages/$(DSTBASE)-drawing.png
 	cp drawings/$(SRCBASE)-laser.eps packages/$(DSTBASE)-lasercut.eps
 	cp drawings/$(SRCBASE)-label.pdf packages/$(DSTBASE)-label.pdf
+	cp diagrams/brainamp-pins.png packages/$(DSTBASE)-pinout.png
 
 #
 # This is the end of the file.

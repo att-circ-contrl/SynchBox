@@ -26,6 +26,7 @@ release: clean
 	cp drawings/v2a-ain-gprect-stat.eps packages/$(DSTBASE)-drawing.eps
 	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
 	cp notes/v2-frontpanel-bom.txt packages/$(DSTBASE)-bom.txt
+	cp diagrams/code-port.png packages/$(DSTBASE)-pinout.png
 
 #
 # This is the end of the file.

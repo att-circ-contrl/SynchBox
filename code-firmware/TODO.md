@@ -11,7 +11,7 @@ Written by Christopher Thomas.
 
 * Need to add better GPIO support in general.
 
-*  Allow joystick filtering to be configured separately from light sensors.
+* Allow joystick filtering to be configured separately from light sensors.
 
 * Have Makefile targets for 115kbaud and 500kbaud hex files.
 

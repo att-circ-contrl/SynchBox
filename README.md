@@ -130,6 +130,7 @@ by `pcb`.
 the `.fcstd` extension were made with the "`FreeCAD`" program. Files with
 `.iges` and `.step` extensions are models exported to industry-standard
 formats that can be imported into different CAD programs.
+* `diagrams` -- Illustrations that are not mechanical drawings.
 * `drawings` -- Mechanical drawings of boards, cases, and faceplates.
 * `mech` -- CAM files (toolpaths) for cases and faceplates. Files with the
 `.crv` extension were made with Vectric's `VCut` program. Files with the

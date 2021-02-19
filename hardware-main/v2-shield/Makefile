@@ -23,8 +23,8 @@ clean:
 release: clean
 	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp notes/v2-headers/v2-headers.png packages/$(DSTBASE)-headers.png
 	cp notes/v2-shield-bom.txt packages/$(DSTBASE)-bom.txt
+	cp diagrams/v2-headers.png packages/$(DSTBASE)-pinouts.png
 	cp schematics/neurarduino-schem.png packages/$(DSTBASE)-schem.png
 	cp schematics/preamp-schem.png packages/$(DSTBASE)-schem-preamp.png
 
