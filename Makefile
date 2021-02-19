@@ -34,6 +34,17 @@ hwclean:
 	make -C hardware-main clean
 	make -C hardware-periphs clean
 
+# Undocumented target: Rebuild photos.
+# This requires my "photos-orig" source tree, which isn't in the repository.
+# The rebuild scripts fail non-destructively if that's missing, but it'll
+# still confuse the user.
+pics:
+	make -C photos rebuild
+
+# Undocumented target: Remove photos.
+picclean:
+	make -C photos clean
+
 
 #
 # This is the end of the file.

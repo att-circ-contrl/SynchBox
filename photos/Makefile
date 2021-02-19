@@ -20,6 +20,6 @@ rebuild:
 	make -C 20181012-v2 rebuild
 	make -C 20181017-panels rebuild
 	make -C 20181023-adapters rebuild
-	helpers/makegallery.pl --width=24% 20*
+	../utils/makegallery.pl --width=24% 20*
 
 # This is the end of the file.

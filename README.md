@@ -112,6 +112,7 @@ for making hardware components and peripherals. This typically includes a
 generated from the gerber files, a `.zip` archive containing g-code
 toolpaths for various hardware parts, `.stl` files containing meshes for
 various hardware parts, and other documentation as appropriate.
+* `photos` -- Selected photographs of the SynchBox and its accessories.
 * `utils` -- Various helper scripts.
 * `vendor-docs` -- Vendor-provided documentation (other than datasheets).
 Under vendor copyright.
