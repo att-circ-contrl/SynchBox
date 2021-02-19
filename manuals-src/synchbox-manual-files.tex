@@ -1,0 +1,71 @@
+% SyncBox manual - Project files and build environment
+% Written by Christopher Thomas.
+%
+% Copyright (c) 2021 by Vanderbilt University. This work is released under
+% the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+\chapter{Project Files}
+\label{sect-files}
+
+\fixme{This is out of date as of December 2018.}
+
+The following folders contain the CAD files, code, and documentation for 
+the {\projectname} project:
+
+\begin{center}
+\begin{tabular}{lcl}
+\textbf{sketch}     & ~~ & Arduino firmware working directory. \\
+\textbf{hexfiles}   & ~~ & Arduino firmware binary releases. \\
+\textbf{pcb}        & ~~ & Printed circuit board CAD files. \\
+\textbf{manual}     & ~~ & User guide document files. \\
+\textbf{schematics} & ~~ & Schematic drawings. Needed for the manual. \\
+\textbf{datasheets} & ~~ & Datasheets for selected components. \\
+\textbf{drawings}   & ~~ & Mechanical drawings. \\
+\textbf{capture}    & ~~ & {\projectname} communications logs. \\
+\end{tabular}
+\end{center}
+
+Relevant commentary is as follows:
+
+\begin{itemize}
+\item The ``sketch'' directory should be extracted (or symlinked) to a 
+``neurarduino'' project directory within Arduino's ``sketchbook''. See the 
+``README'' file in that directory for more commentary.
+
+\item Alternatively, the ``sketch'' directory may be built using the
+``neuravr'' library instead of using the Arduino development environment.
+To do this, use ``make -f Makefile.neuravr''. See the ``README'' file in
+the ``sketch'' directory for more commentary.
+
+\item The ``pcb'' directory contains two subdirectories (``plots'' and 
+``gerber''). The root directory contains the CAD file (edited with the 
+``pcb'' CAD program from the gEDA project). The ``plots'' directory 
+contains an automatically-generated postscript file and manually-generated 
+XCF and PNG files. The ``gerber'' directory contains 
+automatically-generated GBR files, and a script 
+(``\texttt{pcb2seeed.sh}'') that converts these into a form SeeedStudio 
+will accept (the ZIP archive in that directory).
+
+\item The ``manual'' directory contains LaTeX source files for the user 
+manual. Some resource files are symbolic links to files that are elsewhere 
+in the project.
+
+\item The ``schematics'' and ``datasheets'' directories contain 
+human-readable information pertaining to the design of the {\projectname} 
+system. Anyone redesigning the {\projectname} will likely want to read these.
+
+\item The ``drawings'' directory contains mechanical drawings of the 
+faceplate for the {\projectname} enclosure. The ``laser'' file is separated 
+into layers in such a way as to facilitate importing into laser-cutter 
+software.
+
+\item The ``capture'' directory contains a sample conversation with the 
+{\projectname}. Manually-extracted excerpts are used in the user manual. This 
+file contains most types of traffic that will be seen when talking to the 
+{\projectname}. It should be noted that echo was turned on during this 
+conversation, which (prior to 2017) sometimes results in command characters
+being interleaved with event data.
+\end{itemize}
+
+%
+% This is the end of the file.

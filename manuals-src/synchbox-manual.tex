@@ -1,0 +1,107 @@
+% SynchBox manual - Top level
+% Written by Christopher Thomas.
+%
+% Copyright (c) 2021 by Vanderbilt University. This work is released under
+% the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+\documentclass[letterpaper,11pt]{report}
+\usepackage[letterpaper]{geometry}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{float} % Needed for capital H option.
+
+\geometry{nohead,footskip=0.3in,margin=0.75in}
+
+% Force my paragraph style, darnit.
+\usepackage{indentfirst}
+\setlength{\parskip}{\baselineskip}
+
+% Custom macros.
+\newcommand{\fixme}[1]{\textbf{FIXME: #1}}
+\newcommand{\projectname}{I/O SynchBox }% Remember that this eats a space.
+
+% FIXME - Messy but better than duplicating code.
+\newif\ifuserguide
+\ifcsname userguidemarker\endcsname
+% "User guide" switch is defined. Make sure it's set true.
+\userguidetrue
+\else
+% "User guide" switch is not defined. Define it and set false.
+\userguidefalse
+\fi
+
+%
+% Document body.
+\begin{document}
+
+% Title page.
+
+\pagestyle{empty}
+
+\begin{center}
+%
+\vspace*{1in}
+\ifuserguide
+{\Huge \bfseries \projectname User Guide} \\
+\else
+{\Huge \bfseries \projectname Developer Manual} \\
+\fi
+{\footnotesize Written by Christopher Thomas -- \today.} \\
+%
+\vspace*{1.5in}
+\includegraphics[width=\columnwidth]{photos/title-pic.jpg}
+%
+\vfill
+{\scriptsize
+Copyright (c) {\the\year} by Vanderbilt University. This work is released under
+the Creative Commons Attribution-ShareAlike 4.0 International License.}
+%
+\end{center}
+%
+\clearpage
+%
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
+%
+\tableofcontents
+%
+\clearpage
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+% NOTE - "\thispagestyle" is used for part and chapter beginning pages,
+% and overrides \pagestyle. Redefine it to be harmless.
+\renewcommand{\thispagestyle}[1]{}
+
+% FIXME - Don't break this into parts. Instead have appendices.
+
+\input{synchbox-manual-intro}
+\clearpage
+\input{synchbox-manual-commands}
+\clearpage
+\input{synchbox-manual-periphs}
+\clearpage
+\input{synchbox-manual-maint}
+%
+\ifuserguide
+% Omit developer sections for the user guide.
+\else
+% Include developer sections for the developer manual.
+\clearpage
+\input{synchbox-manual-hardware}
+\clearpage
+\input{synchbox-manual-software}
+\clearpage
+\input{synchbox-manual-files}
+\clearpage
+
+% FIXME - Accessories go here.
+\appendix
+\input{synchbox-manual-brainamp}
+\fi
+
+\end{document}
+
+%
+% This is the end of the file.

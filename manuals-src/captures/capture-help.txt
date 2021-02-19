@@ -1,0 +1,37 @@
+Commands:
+ ?, HLP  :  Help screen.
+    QRY  :  Query system state.
+  ECH 1/0:  Start/stop echoing typed characters back to the host.
+    IDQ  :  Device identification string query.
+    INI  :  Reinitialize (clock reset and events idled).
+  LOG 1/0:  Start/stop reporting log data.
+    LIN n:  Set the data reporting interval to n ticks.
+LVB 2/1/0:  Set data report verbosity (2 = full, 1 = terse, 0 = packed hex).
+    TPW n:  Set the timing pulse duration to n ticks.
+    TPP n:  Set the timing pulse period to n ticks.
+  TIM 1/0:  Enable/disable timing pulses.
+    TBW n:  Set the timing channel 2 pulse duration to n ticks.
+    TBP n:  Set the timing channel 2 pulse period to n ticks.
+  TIB 1/0:  Enable/disable timing channel 2 pulses.
+    RWD n:  Send a reward pulse lasting n ticks.
+    RWB n:  Send a reward channel 2 pulse lasting n ticks.
+    NSU n:  Set the event code pre-strobe setup time to n ticks.
+    NHD n:  Set the event code post-strobe hold time to n ticks.
+  NSE 1/0:  Enable/disable strobing the most significant event code bit.
+    NPD n:  Set the event code strobe pulse duration to n ticks.
+    NEU n:  Emit value n over the event code parallel interface.
+    NDW n:  Set event code data width to n bits (8 or 16).
+CSL/R/I  :  Light sensor calibration slaved to left, right, or independent.
+  CAO/F n:  Calibrate light sensors over n-tick window (one-shot/free-running).
+  CTR/L n:  Force left/right light sensor threshold value to n.
+    FIL n:  Set analog noise filter window to 2^n samples (0 disables).
+    FST n:  Set analog spike rejection threshold to 2^n times the variance.
+    FSW n:  Set spike rejection variance window to 2^n samples (0 disables).
+Debugging commands:
+  XAL 1/0:  Start/stop streaming full-rate analog light sample data.
+  XJL 1/0:  Swaps or un-swaps joystick XY and light sensor LR inputs.
+  XTR 1/0:  Enable/disable reward triggered by rising edge of GP00.
+  XTT 1/0:  Enable/disable timing active on high level on GP00.
+  XTN 1/0:  Enable/disable event code triggered by rising edge of GP00.
+    XMA n:  Emit a rising edge on GP01 when analog 0..4 (X/Y/Z/L/R) rises.
+    XMD  :  Disable GP01 analog diagnostic output.

@@ -1,0 +1,31 @@
+devicetype: USE SyncBox  subtype: v1  revision: 20200128
+
+System state (all values in base 10):
+  Version:  20200128
+  Timestamp:  37580 ticks
+  Clock ticks per second:  10000
+  Reward I/O:  D11/B5/GP05    Reward ch2 I/O:  D10/B4/GP04
+  Timing I/O:  D12/B6/GP06    Timing ch2 I/O:  D13/B7/GP07
+  Debug trigger input:  D6/H3/GP00
+  Debug monitor output:  D7/H4/GP01
+  Logging:  OFF
+  Log interval:  100 ticks
+  Verbosity:  Full
+  Timing:  OFF
+  Timing pulse width/period:  10 / 10000 ticks
+  Timing ch2:  OFF
+  Timing ch2 pulse width/period:  10 / 10000 ticks
+  Event code data front-porch/strobe/back-porch:  2 / 2 / 2 ticks
+  Event code strobe:  ON
+  Event code data width:  16 bits
+  Light sensor thresholds (left/right):  65535 / 65535
+  Light threshold slaving:  INDEPENDENT
+  Analog sample size:   8 bits
+  Noise suppression filter:  2 bits  (decay length 4 samples)
+  Spike suppression filter:
+  Variance LPF:  6 bits  (decay length 64 samples)
+  Spike rejection threshold:  2^2 (4x)
+  External event triggers:  none
+  Analog input being monitored:  none
+  Joystick analog threshold:  127
+End of system state.

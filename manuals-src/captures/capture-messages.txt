@@ -1,0 +1,42 @@
+log 1
+Time: 0005764f  Joy (x/y/c): 0c 00 00  Opt (l/r): 76 75 BLK BLK
+Time: 00057a37  Joy (x/y/c): 0f 00 00  Opt (l/r): 76 76 BLK BLK
+Time: 00057e1f  Joy (x/y/c): 0e 00 00  Opt (l/r): 76 76 BLK BLK
+lvb 1
+T: 000631d0  XYC: 0d 00 00  LR: 76 76 B B
+T: 000635b8  XYC: 0f 00 00  LR: 76 76 B B
+T: 0006399f  XYC: 0e 00 00  LR: 76 76 B B
+lvb 0
+T0006ddb0J0f0000L7676BB
+T0006e198J0e0000L7676BB
+T0006e57fJ0e0000L7676BB
+lvb 2
+Time: 000785a7  Joy (x/y/c): 0c 00 00  Opt (l/r): 76 76 BLK BLK
+Time: 0007898f  Joy (x/y/c): 0d 00 00  Opt (l/r): 76 76 BLK BLK
+Time: 00078d77  Joy (x/y/c): 0f 00 00  Opt (l/r): 76 76 BLK BLK
+log 0
+
+tim 1
+Synch: 00087e8e
+Synch: 0008a59e
+Synch: 0008ccae
+tim 0
+
+rwd 1000
+Reward: 000a3433 03e8
+rwd 1000
+Reward: 000aa549 03e8
+rwd 500
+Reward: 000ba7ee 01f4
+
+xal 1
+99387676
+99457675
+99527675
+995e7675
+xal 0
+
+neu 12345
+Code: 000f2e19 3039
+neu 32767
+Code: 00101097 7fff

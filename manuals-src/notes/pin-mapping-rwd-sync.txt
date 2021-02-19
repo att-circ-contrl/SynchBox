@@ -1,0 +1,4 @@
+My best guess in response to Thilo's question was:
+
+-   Rwd:  GPIO 5 / arduino D11 / atmel B5
+- Synch:  GPIO 6 / arduino D12 / atmel B6

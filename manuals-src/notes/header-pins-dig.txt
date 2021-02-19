@@ -1,0 +1,1 @@
+../../hardware-main/v2-shield/notes/header-pins-dig.txt
