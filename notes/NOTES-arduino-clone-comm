@@ -1,0 +1,6 @@
+Turn off hardware flow control when talking to Arduino clones that don't
+have it.
+
+With "cu", you'd use the "cu -f" argument to disable it.
+
+To set up system defaults, see "arduino-clone-comm-fix.png".
