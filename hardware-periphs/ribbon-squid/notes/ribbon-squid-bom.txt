@@ -1,0 +1,16 @@
+Board:
+
+(1x)  prototyping board (SBB1602-1-ND)
+https://www.digikey.ca/en/products/detail/chip-quik-inc/SBB1602-1/5978264
+
+(8x)  bnc wire cable (314-1190-ND)
+https://www.digikey.ca/en/products/detail/mueller-electric-co/BU-P4969/4073809
+
+(1x) 10-position ribbon cable socket to wire (H1DXH-1036G-ND)
+https://www.digikey.ca/en/products/detail/assmann-wsw-components/H1DXH-1036G/999196
+
+
+Accessories:
+
+(8x) 36" BNC cable (ACX1795-ND)
+https://www.digikey.ca/en/products/detail/amphenol-rf/115101-19-36-00/2504546
