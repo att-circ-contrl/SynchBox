@@ -16,6 +16,7 @@ ISPFLAGS=-c avrispv2 -P usb
 # NOTE - We need "-D" to cancel flash erase, as the boot loader refuses to
 # erase itself.
 ARDFLAGS=-c stk500 -P /dev/ttyACM0 -D
+CLONEFLAGS=-c stk500 -P /dev/ttyUSB0 -D
 
 
 #
@@ -41,11 +42,18 @@ burnisp: $(HEXSYNCH)
 burnard: $(HEXSYNCH)
 	avrdude $(ARDFLAGS) $(MEGAFLAGS) -U flash:w:$(HEXSYNCH):i
 
+burnclone: $(HEXSYNCH)
+	avrdude $(CLONEFLAGS) $(MEGAFLAGS) -U flash:w:$(HEXSYNCH):i
+
 
 # Using "cu -h" for manual echo.
 # FIXME - Some clones are /dev/ttyUSB0, not /dev/ttyACM0.
+# Some clones may also not support flow control.
 test:
 	cu -h -l /dev/ttyACM0 -s 115200
+
+testclone:
+	cu -h -f -l /dev/ttyUSB0 -s 115200
 
 
 #
