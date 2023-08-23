@@ -1,4 +1,4 @@
-FreeCad file didn't export DXF properly.
+FreeCad file didn't export DXF properly (as of 2018).
 
 DXF files were made using LibreCAD. Fonts are iffy.
 DXF units are in inches, not mm, so be careful when importing.
