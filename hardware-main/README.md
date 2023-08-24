@@ -14,6 +14,10 @@ general-purpose variants in their own project.
 
 ## Folders
 
+* `mech-aux` --
+Folder for mechanical models used by several components.
+* `notes` --
+Folder for auxiliary information for building the SynchBox.
 * `v2-backpanel` --
 Faceplate board with 8 TTL BNC connectors and a USB 2.0 B
 power-and-communication port.
