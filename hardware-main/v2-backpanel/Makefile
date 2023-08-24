@@ -25,6 +25,8 @@ release: clean
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
 	cp drawings/v2a-cam-gpio-usb.eps packages/$(DSTBASE)-drawing.eps
 	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
+	cp meshes/v2-backpanel.stl packages/$(DSTBASE)-mesh.stl
+	cp iges/v2-backpanel.iges packages/$(DSTBASE)-model.iges
 	cp notes/v2-backpanel-bom.txt packages/$(DSTBASE)-bom.txt
 
 #
