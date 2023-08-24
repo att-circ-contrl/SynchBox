@@ -23,7 +23,7 @@ clean:
 release: clean
 	cd boards/gerber; $(UPATH)/pcb2seeed.sh $(SRCBASE) $(DSTBASE); mv *zip ../../packages/$(DSTBASE)-pcb.zip
 	cd boards/gerber; $(UPATH)/pcb2png.sh $(SRCBASE) $(DSTBASE)-layout.png; mv *png ../../packages
-	cp drawings/v2a-cam-gpio-usb.eps packages/$(DSTBASE)-drawing.eps
+	cp drawings/v2-backpanel.pdf packages/$(DSTBASE)-drawing.pdf
 	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
 	cp meshes/v2-backpanel.stl packages/$(DSTBASE)-mesh.stl
 	cp iges/v2-backpanel.iges packages/$(DSTBASE)-model.iges
