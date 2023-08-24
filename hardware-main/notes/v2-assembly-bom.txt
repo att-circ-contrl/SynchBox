@@ -1,17 +1,17 @@
 Bill of materials for additional components for assembling the v2 SynchBox:
 
-Item                    Digikey p/n          Qty
+Item                             Digikey p/n          Qty
 
-Arduino Mega 2560       1050-1018-ND           1
+Arduino Mega 2560                1050-1018-ND           1
 
-box metal/abs 8.7"x6.5" HM906-ND               1
+box metal/abs 8.7"x6.5"          HM906-ND               1
 
-spacer nylon 4-40 3/4"  36-1902D-ND            4
-screw nylon 4-40 3/4"   H550-ND                4
-screw nylon 4-40 1/4"   H542-ND                4
-hex nut nylon 4-40      36-9605-ND             4
+standoff nylon 4-40 F-F 3/4"     36-1902D-ND            4
+screw nylon 4-40 3/4"            H550-ND                4
+screw nylon 4-40 1/4"            H542-ND                4
+hex nut nylon 4-40               36-9605-ND             4
 
-USB A-B cable 6'        1175-1089-ND           1
+USB A-B cable 6'                 1175-1089-ND           1
 
 
 This is the end of the file.
