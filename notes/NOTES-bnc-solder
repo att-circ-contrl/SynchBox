@@ -1,0 +1,9 @@
+Soldering BNC connectors is an incredible pain in the tail. This is because
+the shroud pins have good heat conductivity and the shroud has large
+thermal mass.
+
+I'd originally tried preheating using a hot air gun, but my current method
+is to put the iron tip next to the shroud pin, put a blob of solder on it
+(touching the pin and the via), and then wait until the pin heats up enough
+for the solder to wet it. This takes about 1 full minute for the first pin,
+and 10-20 seconds for the each of the other three shroud pins.
