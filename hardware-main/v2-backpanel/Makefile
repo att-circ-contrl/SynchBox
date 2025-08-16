@@ -26,7 +26,9 @@ release: clean
 	cp drawings/v2-backpanel.pdf packages/$(DSTBASE)-drawing.pdf
 	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
 	cp meshes/v2-backpanel.stl packages/$(DSTBASE)-mesh.stl
+	cp meshes/v2-backpanel-simple.stl packages/$(DSTBASE)-simple-mesh.stl
 	cp iges/v2-backpanel.iges packages/$(DSTBASE)-model.iges
+	cp iges/v2-backpanel-simple.iges packages/$(DSTBASE)-simple-model.iges
 	cp notes/v2-backpanel-bom.txt packages/$(DSTBASE)-bom.txt
 
 #

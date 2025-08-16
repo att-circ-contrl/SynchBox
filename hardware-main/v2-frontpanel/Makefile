@@ -26,6 +26,8 @@ release: clean
 	cp drawings/v2-frontpanel.pdf packages/$(DSTBASE)-drawing.pdf
 	cd mech/carve-king; zip ../../packages/$(DSTBASE)-gcode.zip *gcode
 	cp meshes/v2-frontpanel.stl packages/$(DSTBASE)-mesh.stl
+	cp meshes/v2-frontpanel-simple.stl packages/$(DSTBASE)-simple-mesh.stl
+	cp iges/v2-frontpanel-simple.iges packages/$(DSTBASE)-simple-model.iges
 	cp iges/v2-frontpanel.iges packages/$(DSTBASE)-model.iges
 	cp notes/v2-frontpanel-bom.txt packages/$(DSTBASE)-bom.txt
 	cp diagrams/code-port.png packages/$(DSTBASE)-pinout.png
