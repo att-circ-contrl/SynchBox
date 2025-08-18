@@ -15,11 +15,13 @@ clean:
 	make -C v2-shield clean
 	make -C v2-frontpanel clean
 	make -C v2-backpanel clean
+	rm -f packages-aux/*
 
 release:
 	make -C v2-shield release
 	make -C v2-frontpanel release
 	make -C v2-backpanel release
+	cp notes/v2-assembly-bom.txt packages-aux/
 
 #
 # This is the end of the file.
