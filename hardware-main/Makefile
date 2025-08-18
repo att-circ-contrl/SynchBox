@@ -21,7 +21,7 @@ release:
 	make -C v2-shield release
 	make -C v2-frontpanel release
 	make -C v2-backpanel release
-	cp notes/v2-assembly-bom.txt packages-aux/
+	cp notes/v2-assembly-bom.txt packages-aux/synchbox-misc-bom.txt
 
 #
 # This is the end of the file.
